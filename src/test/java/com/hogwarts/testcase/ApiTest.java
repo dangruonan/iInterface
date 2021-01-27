@@ -26,13 +26,13 @@ public class ApiTest {
     private Properties loadFromEnvProperties(String propFileName) {
         Properties prop = null;
 
-        String path = System.getProperty("user.home");
+        String path = System.getProperty("user.dir");
 
         //读入envProperties属性文件
         try {
             prop = new Properties();
             InputStream in = new BufferedInputStream(
-                    new FileInputStream(path + File.separator + propFileName));
+                    new FileInputStream(path + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator +propFileName));
             prop.load(in);
             in.close();
         } catch (IOException ioex) {
